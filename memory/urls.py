@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^upload$', 'upload.views.upload', name='upload'),
      url(r'^$', 'upload.views.upload', name='upload'),
+     url(r'^login$', 'login.views.login', name='login'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

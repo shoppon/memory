@@ -12,3 +12,4 @@ def upload(request):
             destination.write(chunk)
         destination.close()
         return HttpResponse("hello world")
+    return HttpResponse("get")
