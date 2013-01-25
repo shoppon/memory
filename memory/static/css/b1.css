@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    width: 966px;
+    height: 1200px;
+}
+
+.header {
+    background: #40e0d0;
+    height: 100px;
+}
+
+.nav {
+    height: 50px;
+    width: 966px;
+    background: #98fb98;
+}
+
+.nav ul {
+    text-align: left;
+}
+
+.nav ul li{
+    height: 80px;
+    width: 966px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline;
+    text-align: center;
+    font-size: 250%;
+    text-decoration: none;
+}
+
+.nav ul li a:link {
+    text-decoration: none;
+}
+
+.content {
+    width: 966px;
+}

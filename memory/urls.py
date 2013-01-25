@@ -18,5 +18,5 @@ urlpatterns = patterns('',
      
      url(r'^$', direct_to_template, {"template": "index.html"}, name='home'),
      
-     url(r'^gallery/', include('memory.gallery.urls')),
+     url(r'^gallery', include('memory.gallery.urls')),
 )

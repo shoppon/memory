@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html>
+{% load i18n future %}
+<html lang="z-ch">
     <head>
-        <body>
-            <h1>
-                This is base page
-            </h1>
-        </body>
+        <base href="http://localhost:8000/" />
+        <meta charset="utf-8">
+        <title>gallery</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/b1.css">
+        {% block extra_css %}
+        {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
     </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1 >Welcome to Shoppon's home</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a id="i" href="">首页</a>
+                    </li>
+                    <li>
+                        <a id="g" href="gallery">相册</a>
+                    </li>
+                    <li>
+                        <a id="m" href="">留言</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </body>
 </html>

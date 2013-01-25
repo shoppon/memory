@@ -1,0 +1,42 @@
+.gallery-nav {
+    width: 200px;
+    float: left;
+    height: 792px;
+    background: #1e90ff;
+    padding-top: 8px;
+}
+.gallery-nav ul {
+   padding: 0;
+   width: 80%;
+   list-style: none;
+   margin: 0 auto;
+}
+.gallery {
+    color: #777;
+    width: 766px;
+    height: 800px;
+    float: left;
+    background: #fff
+    }
+#galleria {
+    height: 800px;
+    float: left;
+    margin: auto;
+    width: 766px;
+    }
+    
+#gallery-image {
+    width: 160px;
+    height: 160px;
+    margin: 2px;
+}
+
+#gallery-nav-pre {
+    float: left; 
+    width: 80px;
+}
+
+#gallery-nav-next {
+    float: right;
+    width: 80px;
+}
