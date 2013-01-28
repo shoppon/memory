@@ -41,3 +41,7 @@ body {
 .content {
     width: 966px;
 }
+
+#nav-items {
+    margin: 0;
+}

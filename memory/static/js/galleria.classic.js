@@ -9,8 +9,7 @@
 
 	/* global jQuery, Galleria */
 
-	Galleria
-			.addTheme({
+	Galleria.addTheme({
 				name : 'classic',
 				author : 'Galleria',
 				css :  'galleria.classic.css',
