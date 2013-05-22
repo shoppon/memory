@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load blog_tags comment_tags %}
+{% block content %}
+<h1 class="blog-title"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h1>
+<div class="blog-info">
+	<span class="blog-time"> <a href="">{{ blog.publish_time }}</a> </span>
+	<span class="blog-comment"><a href="">评论({% blog_comments blog %})</a></span>
+</div>
+{% autoescape off %}
+<div class="blog-content">
+	<span>{{ blog.content }}</span>
+</div>
+{% endautoescape %}
+{% comments_for blog %}
+{% endblock %} 

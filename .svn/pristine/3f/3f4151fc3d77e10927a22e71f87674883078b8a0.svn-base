@@ -1,0 +1,11 @@
+{% load i18n memory_tags comment_tags %}
+{% comments_thread %}
+<div class="new-comment">
+	<form method="post" action="/comment">
+		{% csrf_token %}
+		{% fields_for posted_comment_form %}
+		<div class="form-actions">
+			<input class="btn btn-large btn-primary" type="submit" value="{% trans "提交" %}">
+		</div>
+	</form>
+</div>
