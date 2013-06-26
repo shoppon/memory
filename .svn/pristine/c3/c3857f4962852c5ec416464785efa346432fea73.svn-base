@@ -1,5 +1,0 @@
-{% extends "base.html" %}
-{% load comment_tags %}
-{% block content %}
-{% comments_for %}
-{% endblock %}

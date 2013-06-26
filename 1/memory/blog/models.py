@@ -9,6 +9,13 @@ from memory.comment.models import TreeComment
 from memory.core.fields import RichTextField
 import re
 
+class Category(models.Model):
+    name = CharField(max_length=32)
+    parent_category = models.ForeignKey('self', null=True, blank=True)
+    
+    def __unicode__(self):
+        return self.name
+
 class Blog(models.Model):
     title = CharField(verbose_name=_("title"), max_length=1024)
     # 内容
@@ -19,7 +26,8 @@ class Blog(models.Model):
     # 修改时间自动为保存的时间
     update_time = DateTimeField(auto_now=True, verbose_name=_("update_time"))
     # 使用GenericRelation， 一定要指定object_id_field
-    comments = generic.GenericRelation(TreeComment, verbose_name=_("comments"))  
+    comments = generic.GenericRelation(TreeComment, verbose_name=_("comments"))
+    categorys = models.ManyToManyField(Category, through='BlogCategory')
     
     class Meta:
         verbose_name = _("blog")
@@ -86,3 +94,7 @@ class Blog(models.Model):
         for i in range(len(arr)):
             result += '</%s>' % arr[len(arr) - i - 1]
         return result
+
+class BlogCategory(models.Model):
+    blog = models.ForeignKey(Blog)
+    category = models.ForeignKey(Category)

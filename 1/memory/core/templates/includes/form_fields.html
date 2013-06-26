@@ -3,9 +3,7 @@
 {{ field }}
 {% else %}
 <div class="control-group">
-	<div class="control-label">
-		{{ field.label_tag }}
-	</div>
+	<label class="control-label">{{ field.label }}</label>
 	<div class="controls">
 		{{ field }}
 		<span class="help-inline">{{ field.help_text }}</span>

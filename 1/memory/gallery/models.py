@@ -12,6 +12,9 @@ class Gallery(models.Model):
     
     def __unicode__(self):
         return self.name
+    
+    def get_images(self):
+        return Image.objects.filter(gallery=self)
 
 class Image(models.Model):
     path = FileBrowseField("Image", max_length=200, directory="images/", extensions=[".jpg"], blank=True, null=True)

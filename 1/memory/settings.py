@@ -25,7 +25,7 @@ MANAGERS = ADMINS
 if LOCAL:
     MYSQL_DB = 'app_shoppon'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '12883300'
+    MYSQL_PASS = 'root'
     MYSQL_HOST_M = '127.0.0.1'
     MYSQL_HOST_S = '127.0.0.1'
     MYSQL_PORT = '3306'

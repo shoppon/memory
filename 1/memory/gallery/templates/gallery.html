@@ -33,13 +33,12 @@
 <div class="gallery">
 	<div id="galleria">
 		{% for image in images %}
-		<a href="{{ image.path.url }}"> <img src="{{ image.get_thumbnail_url }}" /> </a>
+		<a href="{{ image.path.url }}"> <img src="{{ image.path.url }}" /> </a>
 		{% endfor %}
 	</div>
-</div>
-
-<div class="gallery-comment">
-	{% comments_for %}
+	<div class="gallery-comment">
+		{% comments_for %}
+	</div>
 </div>
 
 <script>
