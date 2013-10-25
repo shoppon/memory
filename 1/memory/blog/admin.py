@@ -2,6 +2,7 @@ from django.contrib import admin
 from memory import settings
 from memory.blog import models
 from memory.blog.models import BlogCategory
+from django.utils.translation import ugettext_lazy as _
 
 class BlogCategoryInline(admin.TabularInline):
     model = BlogCategory
@@ -13,6 +14,7 @@ class BlogAdmin(admin.ModelAdmin):
     
     class Media:
         js = [settings.TINYMCE_JS, settings.TINYMCE_SETUP_JS, ]
+        verbose_name = _("blog")
         
 class CategoryAdmin(admin.ModelAdmin):
     pass

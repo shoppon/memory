@@ -27,7 +27,7 @@
 						<ul class="nav">
 							<!-- 应提取出来作为页面管理 -->
 							<li class="{% if is_blog %}active{% endif %}">
-								<a href="/blog">博客</a>
+								<a href="/blog">{% trans "blog" %}</a>
 							</li>
 							<li class="{% if is_gallery %}active{% endif %}">
 								<a href="/gallery">相册</a>
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="content">
+			<div class="content row">
 				{% block content %}
 				{% endblock %}
 			</div>

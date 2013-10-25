@@ -2,25 +2,52 @@
 {% load i18n blog_tags %}
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/blog.css">
+<script src="{{ STATIC_URL }}js/blog.js"></script>
 {% endblock %}
 {% block content %}
-<div class="blog-main">
-	{% for blog in blogs %}
-	<div class="blog">
+<div class="blog-main row">
+	<div class="blog span9">
+		{% for blog in blogs %}
 		<h1 class="blog-title"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h1>
 		<div class="blog-info">
 			<span class="blog-time"> <a href="">{{ blog.publish_time }}</a> </span>
-			<span class="blog-comment"><a href="">{% trans "评论" %}({% blog_comments blog %})</a></span>
+			<span class="blog-comment"><a href="">{% trans "comment" %}({% blog_comments blog %})</a></span>
 		</div>
 		{% autoescape off %}
 		<div class="blog-content">
 			<span>{{ blog.summary }}</span>
 			<span><strong>.....</strong></span>
-			<a class="blog-more" href="{{ blog.get_absolute_url }}">{% trans "阅读全文" %}<span>-></span></a>
+			<a class="blog-more" href="{{ blog.get_absolute_url }}">{% trans "read more" %}<span>-></span></a>
 			<div class="clear"></div>
 		</div>
+		{% endautoescape %}
+		{% endfor %}
 	</div>
-	{% endautoescape %}
-	{% endfor %}
+	<div class="span3">
+		<div class="blog-category">
+			<ul class="nav nav-list">
+				<li class="nav-header">
+					{% trans "category" %}
+				</li>
+				{% for category in categories %}
+				<li>
+					<a href="/blog?cat={{ category.name }}">{{ category.name }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="recent-commnet">
+			<ul class="nav nav-list">
+				<li class="nav-header">
+					{% trans "comment" %}
+				</li>
+				{% for comment in comments%}
+				<li>
+					<a>{{ comment.content }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
 </div>
 {% endblock %}

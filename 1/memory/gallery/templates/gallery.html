@@ -14,30 +14,28 @@
 <script src="{{ STATIC_URL }}js/galleria-1.2.9.min.js"></script>
 {% endblock %}
 {% block content %}
-<div align="center" class="gallery-nav">
-	<ul >
-		{% for gallery in galleries %}
-		<li>
-			<a class="gallery-cover" href="gallery/{{ page }}/{{ gallery.name }}"> <img id="gallery-image" src="{{ gallery.cover.url }}"/>
-			<p>
-				{{ gallery.name }}
-			</p> </a>
-		</li>
-		{% endfor %}
-	</ul>
-	<div class="gallery-page">
-		<a id="gallery-pre" href="gallery/{{ prePage }}">上一页</a>
-		<a id="gallery-next" href="gallery/{{ nextPage }}">下一页</a>
+<div class="row">
+	<div align="center" class="span3 gallery-nav">
+		<ul >
+			{% for gallery in galleries %}
+			<li>
+				<a class="gallery-cover" href="gallery/{{ page }}/{{ gallery.name }}"> <img id="gallery-image" src="{{ gallery.cover.url }}"/>
+				<p>
+					{{ gallery.name }}
+				</p> </a>
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
-</div>
-<div class="gallery">
-	<div id="galleria">
-		{% for image in images %}
-		<a href="{{ image.path.url }}"> <img src="{{ image.path.url }}" /> </a>
-		{% endfor %}
-	</div>
-	<div class="gallery-comment">
-		{% comments_for %}
+	<div class="span9 gallery">
+		<div id="galleria">
+			{% for image in images %}
+			<a href="{{ image.path.url }}"> <img src="{{ image.path.url }}" /> </a>
+			{% endfor %}
+		</div>
+		<div class="gallery-comment">
+			{% comments_for %}
+		</div>
 	</div>
 </div>
 

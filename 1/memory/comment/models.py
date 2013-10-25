@@ -21,7 +21,7 @@ class TreeComment(MPTTModel):
     comment_obj = generic.GenericForeignKey('content_type', 'object_id')
     
     class Meta:
-        verbose_name = _("blog")
+        verbose_name = _("comment")
         ordering = ("-publish_time",)
     
     def __unicode__(self):

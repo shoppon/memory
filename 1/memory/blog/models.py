@@ -11,15 +11,19 @@ import re
 
 class Category(models.Model):
     name = CharField(max_length=32)
+    # 每个分类可以有多个子分类
     parent_category = models.ForeignKey('self', null=True, blank=True)
     
     def __unicode__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = _("category")
 
 class Blog(models.Model):
     title = CharField(verbose_name=_("title"), max_length=1024)
     # 内容
-    content = RichTextField()
+    content = RichTextField(verbose_name=_("content"))
     url = URLField()
     # 发布时间为添加时间
     publish_time = DateTimeField(auto_now_add=True, verbose_name=_("publish_time"))
@@ -27,6 +31,7 @@ class Blog(models.Model):
     update_time = DateTimeField(auto_now=True, verbose_name=_("update_time"))
     # 使用GenericRelation， 一定要指定object_id_field
     comments = generic.GenericRelation(TreeComment, verbose_name=_("comments"))
+    # 博客和分类是多对多关系
     categorys = models.ManyToManyField(Category, through='BlogCategory')
     
     class Meta:

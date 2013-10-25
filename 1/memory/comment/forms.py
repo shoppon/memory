@@ -12,7 +12,7 @@ class TreeCommentForm(forms.ModelForm):
     
     username = forms.CharField(label=_("username"), help_text="必填")
     email = forms.EmailField(label="E-mail", help_text="可选", required=False)
-    content = forms.CharField(label="评论", widget=forms.Textarea(), help_text="必填")
+    content = forms.CharField(label=_("comment"), widget=forms.Textarea(), help_text="必填")
     
     class Meta:
         model = TreeComment

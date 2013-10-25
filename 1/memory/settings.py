@@ -3,7 +3,7 @@
 import os.path
 
 DEBUG = True
-LOCAL = False
+LOCAL = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -98,13 +98,17 @@ TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh_CN'
 
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, 'locale'),           
+)
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
